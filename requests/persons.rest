@@ -3,7 +3,7 @@
 @host = {{hostname}}:{{port}}
 @contentType = application/json
 
-GET http://{{host}}/info
+GET http://{{host}}/api/info
 
 ###
 
@@ -11,13 +11,11 @@ GET  http://{{host}}/api/persons
 
 ###
 
-@id = 4
-
-GET http://{{host}}/api/persons/{{id}}
+GET http://{{host}}/api/persons/63106983a5c9196698b7b68f
 
 ###
 
-DELETE http://{{host}}/api/persons/{{id}}
+DELETE http://{{host}}/api/persons/63106983a5c9196698b7b68f
 
 ###
 
@@ -25,6 +23,16 @@ POST http://{{host}}/api/persons
 Content-Type: {{contentType}}
 
 {
-  "name": "Kilig",
-  "number": "1234567890"
+  "name": "Arto Hellas",
+  "number": "040-123456"
+}
+
+###
+
+PUT http://{{host}}/api/persons/63105af736be451a80bd2d0d
+Content-Type: {{contentType}}
+
+{
+  "name": "Ada Lovelace",
+  "number": "12345678901"
 }
