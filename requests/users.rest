@@ -1,0 +1,18 @@
+@hostname = localhost
+@port = 3003
+@host = {{hostname}}:{{port}}
+@router = /api/users/
+@content-type = application/json
+
+GET http://{{host}}{{router}}
+
+###
+
+POST http://{{host}}{{router}}
+Content-Type: {{content-type}}
+
+{
+  "username": "kilig",
+  "name": "wy",
+  "password": "123456"
+}

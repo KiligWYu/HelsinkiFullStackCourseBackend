@@ -1,0 +1,44 @@
+@hostname = localhost
+@port = 3003
+@host = {{hostname}}:{{port}}
+@content-type = application/json
+
+GET http://{{host}}/api/blogs
+
+###
+
+POST  http://{{host}}/api/blogs
+Content-Type: {{content-type}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYzMTczZTIyYThhYzcyZmEyYjBjZWRhOCIsImlhdCI6MTY2MjcwMzc4OCwiZXhwIjoxNjYyNzA3Mzg4fQ.oHH6FPJZSPdTGDd7RswaPHicqecHuGk1lsTGi7phgGQ
+
+# {
+#   "title": "Kilig's Blog",
+#   "author": "Kilig",
+#   "url": "https://KiligWYu.com/",
+#   "likes": 1,
+#   "userId": "631732d124bde0ee0fe42063"
+# }
+
+{
+  "title": "全栈公开课",
+  "author": "赫尔辛基",
+  "url": "https://fullstackopen.com/zh/",
+  "likes": 10000
+}
+
+###
+
+DELETE   http://{{host}}/api/blogs/631ae25d1717a588ca28b0fb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYzMTczZTIyYThhYzcyZmEyYjBjZWRhOCIsImlhdCI6MTY2MjcwMzc4OCwiZXhwIjoxNjYyNzA3Mzg4fQ.oHH6FPJZSPdTGDd7RswaPHicqecHuGk1lsTGi7phgGQ
+
+###
+
+PUT   http://{{host}}/api/blogs/6315b8ed5edd8d2e0e8bc5d9
+Content-Type: {{content-type}}
+
+{
+  "title": "Kilig's Blog",
+  "author": "Kilig",
+  "url": "https://KiligWYu.com/",
+  "likes": 0
+}
